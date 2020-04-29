@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button ButtonRight;
     private TextView Score;
     private String left, middle, right;
-    private Integer point;
+    private Integer point = 0;
 
     private static final String TAG = "Whack-A-Mole";
 
@@ -69,12 +69,10 @@ public class MainActivity extends AppCompatActivity {
         ButtonRight = (Button) findViewById(R.id.ButtonRight);
         Score = (TextView) findViewById(R.id.Score);
 
-        point = 0;
-
         ButtonLeft.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v)
             {
-                onStart();
+                
                 Log.v(TAG, "Button Left Clicked!");
                 if(left == "*"){
                     point += 1;
@@ -86,13 +84,14 @@ public class MainActivity extends AppCompatActivity {
                     Score.setText(""+point);
                     Log.v(TAG, "Missed, score deducted!");
                 }
+                onStart();
             }
         });
 
         ButtonMiddle.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v)
             {
-                onStart();
+
                 Log.v(TAG, "Button Middle Clicked!");
                 if(middle == "*"){
                     point += 1;
@@ -104,13 +103,14 @@ public class MainActivity extends AppCompatActivity {
                     Score.setText(""+point);
                     Log.v(TAG, "Missed, score deducted!");
                 }
+                onStart();
             }
         });
 
         ButtonRight.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v)
             {
-                onStart();
+
                 Log.v(TAG, "Button Right Clicked!");
                 if(right == "*"){
                     point += 1;
@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     Score.setText(""+point);
                     Log.v(TAG, "Missed, score deducted!");
                 }
+                onStart();
             }
         });
     }
